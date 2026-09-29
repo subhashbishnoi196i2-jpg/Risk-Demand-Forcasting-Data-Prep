@@ -1,0 +1,48 @@
+Ride Demand Forecasting Data Prep Engine
+
+In this project, I worked on a ride-sharing dataset. The goal was to clean 
+the data and make it ready for machine learning so we can predict ride demand.
+
+I used 3 files:
+1. riders.csv - Rider details
+2. trips.json - Trip bookings
+3. city_zones.sql - Zone details
+
+What I Did:
+
+1. Data Loading
+   I loaded CSV, JSON, and SQL files using Pandas, json, and sqlite3.
+
+2. Missing Values
+   I filled numbers with mean and text with mode. I also used KNN Imputer 
+   for trip duration, distance, and fare.
+
+3. Outliers
+   I used IQR method to cap outliers in fare, distance, and duration.
+
+4. Date Handling
+   I extracted hour, day of week, and month from trip dates.
+
+5. Encoding
+   I used Label Encoding for gender and One-Hot Encoding for payment mode.
+
+6. Binning
+   I created ride_frequency (Low, Medium, High) using pd.cut.
+
+7. Transformations
+   I applied log transform on fare and distance, and square-root on duration.
+
+8. Feature Scaling
+   I used StandardScaler and MinMaxScaler.
+
+9. Feature Construction
+   I created avg_ride_distance, avg_ride_fare, is_peak_hour, 
+   days_since_signup, ride_cancellation_rate, and surge_flag.
+
+Final Result:
+- File name: final_prepared_rides_dataset.csv
+- Total rows: 2000
+- Total columns: 30+
+- All missing values filled
+- All outliers handled
+- Data ready for machine learning
